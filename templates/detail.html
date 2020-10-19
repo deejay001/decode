@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<section class="site-section" id="section-features">
+      <div class="container">
+        <div class="row site-section">
+          <div class="col-md-8">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-success" role="alert">
+                    {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <p><img src="{{ post.photo.url }}" alt="" class="img-fluid"></p>
+          </div>
+          <div class="col-md-4">
+              <h3 class="mb-3"><strong>{{ post.title }}</strong></h3>
+            <p>{{ post.content }}</p>
+             <div class="meta">
+                  <a href="#" style="color: black"><span class="icon-calendar"></span>{{ post.created_on }} </a>
+                  <a href="#" style="color: black"><span class="icon-bubble"></span> {{ post.comments.count }} Comments</a>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+
+
+    <section class="site-section bg-light">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-12">
+            <div class="section-heading text-center">
+              <h2>Client <strong>Comments</strong></h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+          {% for com in com %}
+          <div class="col-md-6">
+
+              <div class="block-47 d-flex mb-5">
+                <blockquote class="block-47-quote">
+                  <cite class="block-47-quote-author">&mdash; {{ com.name }} </cite>
+                  <p> {{ com.body }} </p>
+                </blockquote>
+              </div>
+
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+
+<section class="site-section bg-light" id="section-contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-5">
+            <div class="section-heading text-center">
+              <h2>What do you feel about this <strong> Post</strong></h2>
+            </div>
+          </div>
+
+          <div class="col-md-7 mb-5 mb-md-0">
+            <form action="" method="post" class="site-form">
+                {% csrf_token %}
+              <h3 class="mb-5">Leave a message</h3>
+            {% if messages.error %}
+                {% for message in messages %}
+                    {% if message.error %}
+                    <div class="alert {{ message.tags }} alert-danger" role="alert">
+                    {{ message }}
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+              <div class="form-group">
+                <input type="text" name="name" class="form-control px-3 py-4" placeholder="Your Name">
+              </div>
+              <div class="form-group mb-5">
+                <textarea name="body" class="form-control px-3 py-4" cols="30" rows="10" placeholder="Write a Message"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-primary  px-4 py-3" value="Send Message">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+{% endblock %}

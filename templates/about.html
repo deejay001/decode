@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+ <section class="site-hero" style="background-image: url(static/images/about-bg.jpg);" id="section-home" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row intro-text align-items-center justify-content-center">
+          <div class="col-md-10 text-center">
+            <h1 class="site-heading site-animate"><strong>About Deji</strong></h1>
+            <p class="lead site-subheading mb-4 site-animate">This is what i do</p>
+            <p><a href="#section-about" class="smoothscroll btn btn-primary px-4 py-3">More On Me</a></p>
+          </div>
+        </div>
+      </div>
+    </section> <!-- section -->
+
+<section class="site-section" id="section-about">
+      <div class="container">
+        <div class="row mb-5 align-items-center">
+          <div class="col-lg-7 pr-lg-5 mb-5 mb-lg-0">
+            <img src="static/images/my2.jpg" alt="Image placeholder" class="img-fluid">
+          </div>
+          <div class="col-lg-5 pl-lg-5">
+            <div class="section-heading">
+              <h2>About <strong>Me</strong></h2>
+            </div>
+            <p class="lead">My name is Ayodeji Osayemi. I am a student of Funaab</p>
+            <p class="mb-5  ">I am a Fullstack web developer but i specialize in backend. Feel free to contact me for your jobs</p>
+
+            <p>
+              <a href="https://api.whatsapp.com/send?phone=2349076174609" class="btn btn-primary px-4 py-2 btn-sm smoothscroll">Hire Me</a>
+            </p>
+          </div>
+        </div>
+      </div>
+</section>
+
+{% endblock content %}

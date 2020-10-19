@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D_code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images\logo1.png' %}">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700" rel="stylesheet">
+
+</head>
+<body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
+
+    <nav class="navbar navbar-expand-lg site-navbar navbar-light bg-light" id="pb-navbar">
+
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+          <a class="" href="{% url 'index' %}"><img src="{% static 'images\logo1.png' %}" width="100" height="70"></a>
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample09">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+<style>
+    /* Footer Area css
+============================================================================================ */
+.p_120 {
+  padding-top: 120px;
+  padding-bottom: 120px; }
+
+
+.footer_area {
+  background: #000410; }
+
+.f_title {
+  margin-bottom: 35px; }
+  .f_title h3 {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Heebo", sans-serif;
+    margin-bottom: 0px;
+    text-transform: uppercase; }
+
+.ab_widget p {
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Roboto", sans-serif;
+  color: #777777;
+  margin-bottom: 30px; }
+  .ab_widget p a {
+    color: #8490ff; }
+  .ab_widget p + p {
+    margin-bottom: 0px; }
+
+.news_widget {
+  padding-left: 15px; }
+  .news_widget p {
+    font-size: 14px;
+    line-height: 24px;
+    font-family: "Roboto", sans-serif;
+    color: #777777;
+    margin-bottom: 15px; }
+  .news_widget .input-group input {
+    height: 40px;
+    background: #fff;
+    border-radius: 0px;
+    width: 80%;
+    border: none;
+    padding: 0px 15px;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    color: #cccccc;
+    outline: none;
+    box-shadow: none; }
+    .news_widget .input-group input.placeholder {
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      font-weight: normal;
+      color: #cccccc; }
+    .news_widget .input-group input:-moz-placeholder {
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      font-weight: normal;
+      color: #cccccc; }
+    .news_widget .input-group input::-moz-placeholder {
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      font-weight: normal;
+      color: #cccccc; }
+    .news_widget .input-group input::-webkit-input-placeholder {
+      font-size: 14px;
+      font-family: "Roboto", sans-serif;
+      font-weight: normal;
+      color: #cccccc; }
+  .news_widget .input-group .sub-btn {
+    border-radius: 0px;
+    background-image: -moz-linear-gradient(0deg, #8490ff 0%, #62bdfc 100%);
+    background-image: -webkit-linear-gradient(0deg, #8490ff 0%, #62bdfc 100%);
+    background-image: -ms-linear-gradient(0deg, #8490ff 0%, #62bdfc 100%);
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 0px;
+    width: 42px;
+    cursor: pointer;
+    color: #fff; }
+
+.social_widget p {
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Roboto", sans-serif;
+  color: #777777;
+  margin-bottom: 10px; }
+.social_widget .list li {
+  margin-right: 17px;
+  display: inline-block; }
+  .social_widget .list li a {
+    color: #cccccc;
+    font-size: 14px;
+    transition: all 300ms linear 0s; }
+  .social_widget .list li:last-child {
+    margin-right: 0px; }
+  .social_widget .list li:hover a {
+    color: #8490ff; }
+
+.copy_right_text {
+  text-align: center;
+  margin-top: 60px; }
+  .copy_right_text p a {
+    color: #8490ff; }
+
+/* End Footer Area css
+
+.img-responsive.mobile {
+    display: none;
+}
+
+@media only screen and (max-device-width: 480px){
+    .img-responsive {
+        display: none;
+    }
+    .img-responsive.mobile {
+        display: block;
+    }
+}
+
+.list {
+  list-style: none;
+  margin: 0px;
+  padding: 0px; }
+
+
+</style>
+
+
+{% block content %}
+
+
+
+{% endblock content %}
+
+    <footer class="footer_area p_120">
+        	<div class="container">
+        		<div class="row footer_inner">
+        			<div class="col-lg-5 col-sm-6">
+        				<aside class="f_widget ab_widget">
+        					<div class="f_title">
+        						<h3>About Me</h3>
+        					</div>
+        					<p>Do you want to be even more successful? Learn to love learning and growth. The more effort you put into improving your skills,</p>
+        					<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | D_code <i class="fa fa-heart-o" aria-hidden="true"></i>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+        				</aside>
+        			</div>
+        			<div class="col-lg-5 col-sm-6">
+        				<aside class="f_widget news_widget">
+        					<div class="f_title">
+        						<h3>Newsletter</h3>
+        					</div>
+        					<p>Stay updated with our latest trends</p>
+        					<div id="mc_embed_signup">
+                                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
+                                	<div class="input-group d-flex flex-row">
+                                        <input name="EMAIL" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                                        <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>
+                                    </div>
+                                    <div class="mt-10 info"></div>
+                                </form>
+                            </div>
+        				</aside>
+        			</div>
+        			<div class="col-lg-2">
+        				<aside class="f_widget social_widget">
+        					<div class="f_title">
+        						<h3>Follow Me</h3>
+        					</div>
+        					<p>Let us be social</p>
+        					<ul class="list">
+        						<li><a href="https://api.whatsapp.com/send?phone=2349076174609"><i class="icon-whatsapp"></i></a></li>
+        						<li><a href="https://twitter.com/dejicoding"><i class="icon-twitter2"></i></a></li>
+        						<li><a href="https://www.instagram.com/__de_code"><i class="icon-instagram2"></i></a></li>
+        						<li><a href="mailto:osayemiayodeji28@gmail.com"><i class="icon-mail"></i></a></li>
+
+        					</ul>
+        				</aside>
+        			</div>
+        		</div>
+        	</div>
+        </footer>
+
+
+    <script src="{% static 'js/vendor/jquery.min.js' %}"></script>
+    <script src="{% static 'js/vendor/popper.min.js' %}"></script>
+    <script src="{% static 'js/vendor/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'js/vendor/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery.waypoints.min.js' %}"></script>
+
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="{% static 'js/google-map.js' %}"></script>
+
+</body>
+</html>

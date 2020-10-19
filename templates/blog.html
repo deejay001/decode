@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<section class="site-section" id="section-features">
+      <div class="container">
+          {% for post in post %}
+        <div class="row site-section">
+          <div class="col-md-8">
+            <p><img src="{{ post.photo.url }}" alt="" class="img-fluid"></p>
+          </div>
+          <div class="col-md-4">
+              <a href="{% url 'detail' post.slug %}" style="color: black"><h3 class="mb-3"><strong>{{ post.title }}</strong></h3></a>
+            <p>{{ post.content }}</p>
+             <div class="meta">
+                  <a href="#" style="color: black"><span class="icon-calendar"></span>{{ post.created_on }} </a>
+                  <a href="#" style="color: black"><span class="icon-bubble"></span> {{ post.comments.count }} Comments</a>
+            </div>
+          </div>
+        </div>
+          {% endfor %}
+      </div>
+</section>
+
+
+
+
+{% endblock %}

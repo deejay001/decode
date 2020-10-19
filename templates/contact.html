@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+ <section class="site-hero" style="background-image: url(static/images/contact-bg.jpg);" id="section-home" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row intro-text align-items-center justify-content-center">
+          <div class="col-md-10 text-center">
+            <h1 class="site-heading site-animate"><strong>Contact me</strong></h1>
+            <p class="lead site-subheading mb-4 site-animate">Have questions. I have answers.</p>
+            <p><a href="https://api.whatsapp.com/send?phone=2349076174609" class="smoothscroll btn btn-primary px-4 py-3">Message me</a></p>
+          </div>
+        </div>
+      </div>
+    </section> <!-- section -->
+
+<section class="site-section bg-light" id="section-contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-5">
+            <div class="section-heading text-center">
+              <h2>Wanna <strong>Start Work</strong> With Me?</h2>
+            </div>
+          </div>
+
+          <div class="col-md-7 mb-5 mb-md-0">
+            <form action="" class="site-form" method="post">
+              {% csrf_token %}
+              <h3 class="mb-5">Get In Touch</h3>
+              {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} " role="alert">{{ message }}</div>
+                {% endfor %}
+              {% endif %}
+              <div class="form-group">
+                <input type="text" class="form-control px-3 py-4" name="name" placeholder="Your Name">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control px-3 py-4" name="email" placeholder="Your Email">
+              </div>
+              <div class="form-group">
+                <input type="tel" class="form-control px-3 py-4" name="phone" placeholder="Your Phone">
+              </div>
+              <div class="form-group mb-5">
+                <textarea class="form-control px-3 py-4" cols="30" name="message" rows="10" placeholder="Write a Message"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-primary  px-4 py-3" value="Send Message">
+              </div>
+            </form>
+          </div>
+          <div class="col-md-5 pl-md-5">
+            <h3 class="mb-5">My Contact Details</h3>
+            <ul class="site-contact-details">
+              <li>
+                <span class="text-uppercase">Email</span>
+                osayemiayodeji28@gmail.com
+              </li>
+              <li>
+                <span class="text-uppercase">Phone</span>
+                09076174609
+              </li>
+              <li>
+                <span class="text-uppercase">Address</span>
+                Surulere, Lagos <br>
+                Blk 21 flat 4  <br>
+                Shitta
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+{% endblock content %}
